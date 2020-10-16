@@ -1,0 +1,1305 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Collection */
+        div#coll_select button {
+            background-color: red;
+            padding: 5px 10px 5px 10px;
+            border: solid 1px red;
+            font-weight: 700;
+            margin: auto 10px;
+            color: white;
+        }
+
+        section#Coll_Cont>div.row {
+            display: none;
+        }
+
+        div div model-viewer {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 250px;
+            border: 10px solid;
+            border-image-slice: 1;
+            border-width: 3px;
+            border-image-source: linear-gradient(to top left, #ff0000, #ffff08);
+            margin: 15px 0;
+        }
+
+        div div model-viewer h6 {
+            background-color: #00000054;
+            height: 10%;
+        }
+
+        div div model-viewer h6:hover {
+            background-color: black;
+            font-weight: 700;
+            color: yellow;
+            font-size: 1.05rem;
+            height: 10%;
+            cursor: pointer;
+        }
+
+        section#Coll_Cont button#Coll_Back {
+            font-size: 20px;
+            font-weight: 700;
+            background-color: yellow;
+            color: black;
+            cursor: pointer;
+            padding: 2px 10px;
+            height: max-content;
+            border: 1px solid yellow;
+        }
+
+        section#Coll_Cont span#BtnBck_title {
+            font-size: 20px;
+            font-weight: 400;
+            background-color: black;
+            color: white;
+            padding: 1px 15px;
+            border: 2px yellow solid;
+        }
+
+        section div#coll_select button.collB_Act {
+            background-color: red;
+        }
+
+        section div#coll_select button.collB_InAct {
+            background-color: black;
+        }
+
+        .displayB {
+            display: block;
+        }
+
+        .displayN {
+            display: none;
+        }
+
+        /* Emote Collection CSS */
+        div.gallery {
+            border-style: solid;
+            border-width: 4px;
+            border-color: #ff0000;
+        }
+
+        .gallery:hover {
+            border-style: solid;
+            border-width: 4px;
+            border-color: #000000;
+        }
+
+        .gallery:hover .desc {
+            background-color: #ff0000;
+        }
+
+        .gallery:hover .desc-title {
+            color: #ffffff;
+            font-weight: 800;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            background-color: #1f1f1f;
+        }
+
+        div.desc span {
+            color: white;
+            font-weight: 800;
+            font-family: monospace;
+            cursor: pointer;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .responsive {
+            padding: 0 6px;
+            float: left;
+            width: 200px;
+            margin: 10px 0;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <section id="Coll_Cont">
+        <h4 style="margin: 20px;" id="Coll_Title">Collection</h4>
+        <div id="coll_select">
+            <button id="coll_vehiB" onclick="collF(this.id)">Vehicle</button>
+            <button id="coll_petB" onclick="collF(this.id)">Pet</button>
+            <button id="coll_emoB" onclick="collF(this.id)">Emote</button>
+            <button id="coll_weapB" onclick="collF(this.id)">Weapon</button>
+        </div>
+        <button id="Coll_Back" class="displayN">BACK</button>
+        <span id="BtnBck_title" class="displayN"></span>
+
+        <!-- Collection vehicle container -->
+        <div id="_vehi" class="row">
+            <div id="Amp_vehi" class="Item_vehi">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601217462625076/1ZQopni-4NT/ezOej77jkSc/model.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601217462625076/1ZQopni-4NT/68nHgtrfHx-/model.usdz"
+                    alt="Amphibian Vehicle Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('Amp',this.id)">Amphibian</h6>
+                </model-viewer>
+            </div>
+            <div id="Jip_vehi" class="Item_vehi">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601217803414578/bKPfdMoJe6a/0KjYLxe0g_F/model.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601217803414578/bKPfdMoJe6a/aGZo2H-40c6/model.usdz"
+                    alt="Jeep Vehicle Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('Jip',this.id)">Jeep</h6>
+                </model-viewer>
+            </div>
+            <div id="Moto_vehi" class="Item_vehi">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601439844824422/5nLpgnd7xK3/eJLVq-DDm-h/model.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601439844824422/5nLpgnd7xK3/8FDlRIdRPPe/model.usdz"
+                    alt="Motobike Vehicle Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('Moto',this.id)">Motobike</h6>
+                </model-viewer>
+            </div>
+            <div id="RD_vehi" class="Item_vehi">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601467252081308/108XefT4vdp/20VFc8ZIIMJ/Roadster%20Default.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601467252081308/108XefT4vdp/7CUw37gX5Iu/Roadster%20Default.usdz"
+                    alt="Roadster Vehicle Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('RD',this.id)">Roadster</h6>
+                </model-viewer>
+            </div>
+            <div id="SUV_vehi" class="Item_vehi">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601467412552684/4ipdopP6U5s/eG_kbkZAwH3/SUV%20Default.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601467412552684/4ipdopP6U5s/8U8jZQ1cFjK/SUV%20Default.usdz"
+                    alt="SUV Vehicle Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('SUV',this.id)">SUV</h6>
+                </model-viewer>
+            </div>
+            <div id="Trk_vehi" class="Item_vehi">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601467649795628/3kTyJwr190_/ehwB5MqUCVX/Truck%20Default.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601467649795628/3kTyJwr190_/5ey_gznHXi7/Truck%20Default.usdz"
+                    alt="Truck Vehicle Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('Trk',this.id)">Truck</h6>
+                </model-viewer>
+            </div>
+            <div id="Tutu_vehi" class="Item_vehi">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601467718311032/cYrFxW6h43q/enX2QL22j2K/Tutu%20Default.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601467718311032/cYrFxW6h43q/2UB6YSH9Stk/Tutu%20Default.usdz"
+                    alt="Tutu Vehicle Free Fire" background-color="##eeeeee" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('Tutu',this.id)">Tutu</h6>
+                </model-viewer>
+            </div>
+        </div>
+        <!-- Collection PET container -->
+        <div id="_pet" class="row">
+            <div id="kt_pet" class="Item_pet">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601653687550059/2WhIJkZpFOP/2dTM3th0N5v/cat.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601653687550059/2WhIJkZpFOP/6Y97YIo_qcq/cat.usdz"
+                    alt="Kitty Pet Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('kt',this.id)">Kitty</h6>
+                </model-viewer>
+            </div>
+            <div id="mp_pet" class="Item_pet">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601654177021891/0T0-JYW2Ktw/3YI5tjDYjhZ/dog.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601654177021891/0T0-JYW2Ktw/fiy73H-HSfU/dog.usdz"
+                    alt="Mechanical Pup Pet Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('mp')">Mechanical Pup</h6>
+                </model-viewer>
+            </div>
+            <div id="pt_pet" class="Item_pet">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601655359792244/3m-lspHA4NG/dIkRjRDW06v/Panther.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601655359792244/3m-lspHA4NG/0qDdZGDY4pM/Panther.usdz"
+                    alt="Panther by Pet Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('pt',this.id)">Panther</h6>
+                </model-viewer>
+            </div>
+            <div id="pd_pet" class="Item_pet">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601721291646338/eXSc00c9xxN/6TwfUgqP8Yx/panda.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601721291646338/eXSc00c9xxN/1mbKTehmCCb/panda.usdz"
+                    alt="Panda by Pet Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('pd')">Panda</h6>
+                </model-viewer>
+            </div>
+            <div id="sb_pet" class="Item_pet">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601656112316279/9IJrAOCebaW/c7K6yZ3AJG9/shiba.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601656112316279/9IJrAOCebaW/3pBUsnmc-P7/shiba.usdz"
+                    alt="Shiba Pet Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('sb',this.id)">Shiba</h6>
+                </model-viewer>
+            </div>
+            <div id="ro_pet" class="Item_pet">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601655995648768/e-LTRCiMWpQ/7IvZfrmp5m9/robo.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601655995648768/e-LTRCiMWpQ/7jGB5zbK47u/robo.usdz"
+                    alt="Robo Pet Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('ro')">Robo</h6>
+                </model-viewer>
+            </div>
+            <div id="fx_pet" class="Item_pet">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601656554349966/e3TnN-Kx-8_/fbn8CPK-Unx/fox.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601656554349966/e3TnN-Kx-8_/ea9FaKastPL/fox.usdz"
+                    alt="Spirit Fox Pet Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('fx')">Spirit Fox</h6>
+                </model-viewer>
+            </div>
+            <div id="pr_pet" class="Item_pet">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601655323650500/cLAirnLeeZB/4OPpVfGRp_5/poring.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601655323650500/cLAirnLeeZB/5E4RhSneHZQ/poring.usdz"
+                    alt="Poring Pet Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('pr')">Poring</h6>
+                </model-viewer>
+            </div>
+            <div id="ot_pet" class="Item_pet">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601654700778645/4mWr-bvbUmr/761Rj8TEjmI/pet_3p_Otter.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601654700778645/4mWr-bvbUmr/2DOrVGFFurH/pet_3p_Otter.usdz"
+                    alt="Otter Pet Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('ot')">Ottero</h6>
+                </model-viewer>
+            </div>
+            <div id="fl_pet" class="Item_pet">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601653611564613/4JHXavaM_1h/aGqfZ3hn12c/Falco%20hawk.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601653611564613/4JHXavaM_1h/fLGRQ3DPMC3/Falco%20hawk.usdz"
+                    alt="Falco Pet Free Fire)" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('fl')">Falco</h6>
+                </model-viewer>
+            </div>
+            <div id="wg_pet" class="Item_pet">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601657081119554/8k7dkHqfzdF/5mswaL6-a0q/pet_3p_Penguin.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601657081119554/8k7dkHqfzdF/7uVa_SZ-ag9/pet_3p_Penguin.usdz"
+                    alt="Wagger Pet Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('wg')">Wagger</h6>
+                </model-viewer>
+            </div>
+            <div id="rc_pet" class="Item_pet">
+                <model-viewer
+                    src="https://poly.googleusercontent.com/downloads/c/fp/1601655629614942/av5ijhFHSEV/ci6NPj-YPmY/pet_Raccoon.gltf"
+                    ios-src="https://poly.googleusercontent.com/downloads/c/fp/1601655629614942/av5ijhFHSEV/0tyEVsdBE5Q/pet_Raccoon.usdz"
+                    alt="Raccoon Pet Free Fire" background-color="##fafafa" camera-controls auto-rotate>
+                    <h6 onclick="SubVehi_Create('rc')">Raccoon</h6>
+                </model-viewer>
+            </div>
+        </div>
+        <!-- Collection PET container -->
+        <div id="_emo" class="row">
+            <div id="c_emo" class="Item_emo responsive">
+                <div class="gallery">
+                    <img alt="Deogad Beach in Sindhudurg district" height="400"
+                        src="http://1.bp.blogspot.com/-rbtMRhQycmk/X4cJRgfdb7I/AAAAAAAADuc/erpOIBQS4ZQFajMxkiqcf2jNZwbI54tPACK4BGAYYCw/s1600/applause.webp"
+                        width="600" />
+                    <div class="desc">
+                        <span onclick="SubVehi_Create('r',this.id)">Kitty</span>
+                    </div>
+                </div>
+            </div>
+            <div id="r_emo" class="Item_emo responsive">
+                <div class="gallery">
+                    <img alt="Banks of river Tapi" height="400"
+                        src="http://1.bp.blogspot.com/-ZW6z28BsP1A/X4cJjShSb9I/AAAAAAAADuo/VxcWeYoX3SM7BzsxlSWEN1klWRgstD-JwCK4BGAYYCw/s1600/arm+wave.webp"
+                        width="600" />
+                    <div class="desc">
+                        <span onclick="SubVehi_Create('r',this.id)">Kitty</span>
+                    </div>
+                </div>
+            </div>
+            <div id="l_emo" class="Item_emo responsive">
+                <div class="gallery">
+                    <img alt="Pune Property Look" height="400"
+                        src="http://2.bp.blogspot.com/-tkswI0XDa8E/X4cJn5z9CgI/AAAAAAAADuw/CnuqKwHz4YIDbwTgwJOn3BE4bxTkg-z3wCK4BGAYYCw/s1600/dab.webp"
+                        width="600" />
+                    <div class="desc">
+                        <span onclick="SubVehi_Create('l',this.id)">Kitty</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="_weap" class="row"></div>
+    </section>
+
+    <script>
+        const Player = {
+            code: 'MTk5Mzk0NDExMQ==',
+        };
+    </script>
+
+    <script>
+        const Player_Info = {
+            'MTk5Mzk0NDExMQ==': {
+                20200928: {
+                    Url: '',
+                    uID: 1993944111,
+                    Like: 400,
+                    Avatar: 'Halloween',
+                    Banner: 'DaddyCALLing',
+                    ign: "ᴺᴼᴼᴮ᭄ㄚΛＤㄩ★",
+                    Guild: "DadasGroup",
+                    GuildP: "F",
+                    Elites: [26, 27, 25],
+                    BRscores: 2903,
+                    CSranks: 'd' + 4,
+                    CSstars: 2,
+                    CSkdaS: 2.31,
+                    CSwinS: 60,
+
+                    SF_G: 5,
+                    SF_W: 5,
+                    SF_K: 5,
+                    SB_T10R: 5,
+                    SB_KDR: 5,
+                    SB_avgLT: 5,
+                    SB_avgDpM: 5,
+                    SB_MKnOM: 5,
+                    SB_HSs: 5,
+                    SB_HSR: 5,
+
+                    DF_G: 5,
+                    DF_W: 5,
+                    DF_K: 5,
+                    DB_T10R: 5,
+                    DB_KDR: 5,
+                    DB_avgLT: 5,
+                    DB_avgDpM: 5,
+                    DB_MKnOM: 5,
+                    DB_HSs: 5,
+                    DB_HSR: 5,
+
+                    QF_G: 5,
+                    QF_W: 5,
+                    QF_K: 5,
+                    QB_T3R: 5,
+                    QB_KDR: 5,
+                    QB_RVI: 200,
+                    QB_KCDN: 150,
+                    QB_avgLT: 5,
+                    QB_avgDpM: 5,
+                    QB_MKnOM: 5,
+                    QB_HSs: 5,
+                    QB_HSR: 5,
+
+                    vehi: {
+                        Amp: ['A0001', 'A0003'],
+                        Jip: ['J0001', 'J0004'],
+                        RD: ['RD0002'],
+                    },
+                    pet: {
+                        kt: ['kt1', 'kt2'],
+                        fx: ['fx1', 'fx2'],
+                        fl: ['fl1', 'fl2'],
+                        wg: ['wg1', 'wg2'],
+                        rc: ['rc1', 'rc2'],
+                    },
+                    emo: {
+                        c: {},
+                        r: {},
+                        l: {},
+                    },
+                    weap: {
+
+                    },
+                    First: '',
+                    Middle: '',
+                    Last: '',
+                    Address: ['Akot', 'Akot', 444101, 'Akola', 'Vidarbha'],
+                    BOD: 20060414,
+                    Social: {
+                        Facebook: '',
+                        Twitter: '',
+                        YouTube: '',
+                        Instagram: '',
+                        Discord: '',
+                    },
+                    Device: 'Redmi Note',
+                    DeviceT: 'Smartphone',
+
+
+                },
+                20200115: {
+                    second: '',
+                },
+                20200401: {
+                    third: '',
+                },
+            },
+            'AnotherCode==': {
+
+            },
+        }
+
+        // Resouces
+        let ign_ELM = document.getElementById('player-IGN');
+        let Ava_ELM = document.getElementById('player-AVAT');
+        let Ban_ELM = document.getElementById('player-BANN');
+        let uID_ELM = document.getElementById('player-UID');
+        let Like_ELM = document.getElementById('player-LIKE');
+        let CS_KDA = document.getElementById('CSkda');
+        let CS_Win = document.getElementById('CSwin');
+        const PYVerTitle = Object.getOwnPropertyNames(Player_Info[Player['code']]);
+        PYVerTitle.sort(function (a, b) { return b - a });
+        const P_Resources = {
+            Ava_IMG: {
+                default: 'https://1.bp.blogspot.com/-s4aN5wT6yVE/X0pmr8ybpZI/AAAAAAAADmo/if8ivVuini43pMgz59h1_jIpOq1zst1oACLcBGAsYHQ/s516/daddyCalling+crop.jpg',
+                halloween: 'https://1.bp.blogspot.in/-N5wT6yVE/Xpmr8ybpZI/AAAAAAAADmo/if8ivVuini43pMgz59h1_jIpOq1zst1oACLcBGAsYHQ/s516/daddyCalling%2Bcrop.jpg',
+                black_flag: '#',
+            },
+            Ban_IMG: {
+                default: 'https://1.bp.blogspot.com/-s4aN5wT6yVE/X0pmr8ybpZI/AAAAAAAADmo/if8ivVuini43pMgz59h1_jIpOq1zst1oACLcBGAsYHQ/s516/daddyCalling%2Bcrop.jpg',
+                daddycalling: 'https://1.bp.blogspot.in/-N5wT6yVE/Xpmr8ybpZI/AAAAAAAADmo/if8ivVuini43pMgz59h1_jIpOq1zst1oACLcBGAsYHQ/s516/daddyCalling+crop.jpg',
+                halloween: '#',
+                black_flag: '#',
+            },
+            EP_IMG: {
+                S25: 'https://4.bp.blogspot.com/-sQrOHSxIDZ0/X1O99uL4E-I/AAAAAAAADp8/cMsS2YC-LToF-Is8qu-JgSqRNuKRC_qVwCK4BGAYYCw/s1600/6%2B20.webp',
+                S26: 'https://4.bp.blogspot.com/-qN18ftO4M4M/X1O-0RuhFqI/AAAAAAAADqI/Tit2aaoXB7kwMHpzRBiP_VyURUMTDFHXgCK4BGAYYCw/s1600/7%2B20.webp',
+                S27: 'https://3.bp.blogspot.com/-5gxEOs-7JWA/X1O-4P2hRzI/AAAAAAAADqQ/iWm4PVkVDXQ50Fa6758qIqvMg-DIirMogCK4BGAYYCw/s1600/8%2B20.webp',
+            },
+            Rank_IMG: {
+                bronze1: '',
+                bronze2: '',
+                bronze3: '',
+                silver1: '',
+                silver2: '',
+                silver3: '',
+                gold1: '',
+                gold2: '',
+                gold3: '',
+                gold4: '',
+                platinum1: '',
+                platinum2: '',
+                platinum3: '',
+                platinum4: '',
+                diamond1: 'https://1.bp.blogspot.com/--EbAz05pEek/X2cCobh2sqI/AAAAAAAADtA/1R_y0_4QDjcC0xQK3tsdXl1bO_gYTbu4wCK4BGAYYCw/s1600/diamond%2B1.webp',
+                diamond2: 'https://4.bp.blogspot.com/-MfP7qXwZI2w/X2cCsIf6JkI/AAAAAAAADtI/wObQw46xrYsg00ft0N3ZC44pbftofDhpQCK4BGAYYCw/s1600/diamond%2B2.webp',
+                diamond3: 'https://3.bp.blogspot.com/-4ljeIpB3oXg/X2Yur8X3XPI/AAAAAAAADsU/mFc091pbAZ0oaN0jQVKXRbWE6wa1RSvygCK4BGAYYCw/s400/diamond%2B3.webp',
+                diamond4: 'https://4.bp.blogspot.com/-ilUFna-sHDQ/X2Yuv1UAwLI/AAAAAAAADsc/cuHbjFfPP5U13dtHkOlpB1ozSXclOtHPwCK4BGAYYCw/s400/diamond%2B4.webp',
+                heroic1: '',
+            },
+            br_scorelist: {
+                bronze1: 1000,
+                bronze2: 1100,
+                bronze3: 1200,
+                silver1: 1300,
+                silver2: 1400,
+                silver3: 1500,
+                gold1: 1600,
+                gold2: 1725,
+                gold3: 1850,
+                gold4: 1975,
+                platinum1: 2100,
+                platinum2: 2225,
+                platinum3: 2350,
+                platinum4: 2475,
+                diamond1: 2600,
+                diamond2: 2750,
+                diamond3: 2900,
+                diamond4: 3050,
+                heroic1: 3200,
+            },
+            CS_maxStar: {
+                bronze: 3,
+                silver: 4,
+                gold: 4,
+                platinum: 5,
+                diamond: 5,
+                heroic: 0,
+            },
+
+            vehi: {
+                Amp: {
+                    A0001: {
+                        name: 'Northern',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601461042091443/4ythvRqLNux/8WwviX6aGse/model.gltf',
+                        'ios-src': 'https://poly.googleusercontent.com/downloads/c/fp/1601461042091443/4ythvRqLNux/9OHoGqcF8Wt/model.usdz',
+                    },
+                    A0002: {
+                        name: 'RainBow Dash',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601462947710830/2-KhtlFQo5i/8x2dFLquyV7/model.gltf',
+                        'ios-src': 'https://poly.googleusercontent.com/downloads/c/fp/1601462947710830/2-KhtlFQo5i/b7KZGR0H3rh/model.usdz',
+                    },
+                    A0003: {
+                        name: 'Angel Devil',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601217126091339/85phsAxDbqF/1ALHkuL6aFc/model.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601217126091339/85phsAxDbqF/cyThZaL9LNH/model.usdz',
+                    },
+                    name: 'Amphibian',
+                },
+                Jip: {
+                    J0001: {
+                        name: 'Halloween',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601463611214004/6S5vvu1tZ7n/dvTWvuGbCpV/scene.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601463611214004/6S5vvu1tZ7n/cz2ABm2FPdJ/scene.usdz',
+                    },
+                    J0002: {
+                        name: 'Royalguard',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601466599025387/6KzhMzj5M5v/bWekD0mfVGk/Jeep%20Royalguard.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601466599025387/6KzhMzj5M5v/eclRmOfjk3J/Jeep%20Royalguard.usdz',
+                    },
+                    J0003: {
+                        name: 'Easter',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601466731807265/e3YORlZazfO/6oAnqyxVXGw/Jeep%20Easter.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601466731807265/e3YORlZazfO/9IviYm9qR4_/Jeep%20Easter.usdz',
+                    },
+                    J0004: {
+                        name: 'Golden Mecernary',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601466879166093/2AWKKqbNjIP/8rpHe4uT4EF/Jeep GoldenMecernary.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601466879166093/2AWKKqbNjIP/5uqTR2Lj-1v/Jeep GoldenMecernary.usdz',
+                    },
+                    J0005: {
+                        name: 'MadMax',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601466944248027/7hoeO1Vmtzl/6YFd6KED0nt/Jeep MadMax.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601466944248027/7hoeO1Vmtzl/7XJDX485sU6/Jeep MadMax.usdz',
+                    },
+                    name: 'Jeep',
+                },
+                Moto: {
+                    M0001: {
+                        name: 'BioBody',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601466878896169/2Zyyo2KDWWy/7M1D03da_Hu/Motobike BioBody.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601466878896169/2Zyyo2KDWWy/210tlGFyDPp/Motobike BioBody.usdz',
+                    },
+                    M0002: {
+                        name: 'Fashionfox',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601466989713373/1mVa6SsWx5L/0ckm8nM4I71/Motobike Fashionfox.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601466989713373/1mVa6SsWx5L/0yyyTWlPWtR/Motobike Fashionfox.usdz',
+                    },
+                    M0003: {
+                        name: 'Gemini',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467153143656/esKNeiUSNSb/8HMFxZjw3_f/Motobike Gemini.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467153143656/esKNeiUSNSb/cLcw7Rnf438/Motobike Gemini.usdz',
+                    },
+                    M0004: {
+                        name: 'Cowboy',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601466959504499/8NPBTTDdOyu/1QFktnWKnXh/Motobike Cowboy.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601466959504499/8NPBTTDdOyu/4__ONeFUxB5/Motobike Cowboy.usdz',
+                    },
+                    M0005: {
+                        name: 'Dinosaur',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467087312381/1slkv9cpzjB/2JKG_NsRNvq/Motobike Dinosaur.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467087312381/1slkv9cpzjB/fPERCkeHsVM/Motobike Dinosaur.usdz',
+                    },
+                    M0006: {
+                        name: 'Tron',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467120654993/5AaQleD7oV-/eOJ6WxMjKjI/Motobike Tron.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467120654993/5AaQleD7oV-/aDBmL-07dM8/Motobike Tron.usdz',
+                    },
+                    name: 'Moto',
+
+                },
+                RD: {
+                    RD0001: {
+                        name: 'Trap Hip Hop',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467328969252/3u4WNxmddXW/49Fpf8NqGsR/Roadster Traphiphop.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467328969252/3u4WNxmddXW/7_1XsQhW6Gb/Roadster Traphiphop.usdz',
+                    },
+                    RD0002: {
+                        name: 'Sushikiller',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467291803125/1hPhy35F6vs/dodsrH9es9S/Roadster Sushikiller.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467291803125/1hPhy35F6vs/1pQ1KdPtmEi/Roadster Sushikiller.usdz',
+                    },
+                    RD0003: {
+                        name: 'Futuristiccity',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467057280204/3pS-71azK5y/4XH1oaAEjXz/Roadster Futuristiccity.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467057280204/3pS-71azK5y/dkrzRMPFMCZ/Roadster Futuristiccity.usdz',
+                    },
+                    RD0004: {
+                        name: 'StarLord',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467214757826/94dRMGmqcfE/bXPn2EjCok7/Roadster StarLord.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467214757826/94dRMGmqcfE/adrv8UEM7TP/Roadster StarLord.usdz',
+                    },
+                    name: 'Roadster',
+                },
+                SUV: {
+                    S0001: {
+                        name: 'Jumpsuit',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467470520011/ec7SBvoMSAT/4Ep3NmU3Fd5/SUV Jumpsuit.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467470520011/ec7SBvoMSAT/7wof5s0y7O1/SUV Jumpsuit.usdz',
+                    },
+                    S0002: {
+                        name: 'Imperial Egypt',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467245321681/f5HrN7UjaCu/7jk8OSC68HJ/SUV Imperialegypt.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467245321681/f5HrN7UjaCu/aK-h93Z6cJK/SUV Imperialegypt.usdz',
+                    },
+                    name: 'SUV',
+                },
+                Trk: {
+                    TR0001: {
+                        name: 'Apocalypse',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467512533341/30N5q1exKja/6HJz-F4qgIM/Truck Apocalypse.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467512533341/30N5q1exKja/1KqtgJMdAul/Truck Apocalypse.usdz',
+                    },
+                    TR0002: {
+                        name: 'Fashiontrends',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467436591955/eYHpBZfowhl/afS1W5SkStd/Truck Fashiontrends.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467436591955/eYHpBZfowhl/edAf-TSbwXI/Truck Fashiontrends.usdz',
+                    },
+                    name: 'Monster Truck',
+                },
+                Tutu: {
+                    T0001: {
+                        name: 'Solo Clown',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467884920307/axuTOGI10kX/45SKAEifZGc/Tutu SoloClown.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467884920307/axuTOGI10kX/3qgwGqrWvT7/Tutu SoloClown.usdz',
+                    },
+                    T0002: {
+                        name: 'Christmas',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467675875586/dHZTx56mhGw/blUH8k_cUPz/Tutu Christmas.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467675875586/dHZTx56mhGw/749UmKJkiWq/Tutu Christmas.usdz',
+                    },
+                    T0003: {
+                        name: '8Bit',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467744029741/a8nAw1VO3z5/6_tYUjWaXNP/Tutu 8Bit.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467744029741/a8nAw1VO3z5/c5I4YsBBCSj/Tutu 8Bit.usdz',
+                    },
+                    T0004: {
+                        name: 'India New Year',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601467599802532/0YTiSD1isGT/7y-YDKKTJyT/Tutu Indianewyear.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601467599802532/0YTiSD1isGT/7XZU1jx-EnF/Tutu Indianewyear.usdz',
+                    },
+                    name: 'Auto Rickshaw',
+                },
+            },
+
+
+            pet: {
+                kt: {
+                    kt1: {
+                        name: 'Anniversary',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601653739614710/2sRsBrqvCSN/1n6SOnIjqLC/cat_Anniversary.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601653739614710/2sRsBrqvCSN/c5PCABoUfuH/cat_Anniversary.usdz',
+                    },
+                    kt2: {
+                        name: 'TigerCat',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601654050293060/8Jv-wUTraOz/3sibxR4YcEt/cat_Tigercat.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601654050293060/8Jv-wUTraOz/dgPfK3x89T9/cat_Tigercat.usdz',
+                    },
+                    kt3: {
+                        name: 'Night',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601653964485922/3zXTDO6kSvO/68jVIr-0Vr0/cat_Night.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601653964485922/3zXTDO6kSvO/9Ql6Q4XlTzH/cat_Night.usdz',
+                    },
+                    kt4: {
+                        name: 'MAX Level 6',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601653983961623/7wYpPabLdXW/fFZrChiL0RO/cat_Ocelot.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601653983961623/7wYpPabLdXW/43hsJ_dlX5U/cat_Ocelot.usdz',
+                    },
+                    name: 'Kitty',
+                },
+                mp: {
+                    mp1: {
+                        name: 'Lighting',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601654205536792/3MqYq3XdJii/89CSrHH6NnI/dog_lightning.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601654205536792/3MqYq3XdJii/em40FFJMerb/dog_lightning.usdz',
+                    },
+                    mp2: {
+                        name: 'Iron',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601654181462712/5vY0PlcRZAl/bCSlso2aVf-/dog_irondog.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601654181462712/5vY0PlcRZAl/fXb-Z_GxLJJ/dog_irondog.usdz',
+                    },
+                    mp3: {
+                        name: 'Magnetic',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601654305569731/a1HijqLmG9O/f3YQN5JCKUs/dog_magnetic.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601654305569731/a1HijqLmG9O/fzlZFpKJ99M/dog_magnetic.usdz',
+                    },
+                    name: 'Mechanical Pup',
+                },
+                pt: {
+                    pt1: {
+                        name: 'Spirit',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655420673808/9cJbWHzzb-z/2W5hUp2Xtu6/Panther_Spirit.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655420673808/9cJbWHzzb-z/9mpum4bTIys/Panther_Spirit.usdz',
+                    },
+                    pt2: {
+                        name: 'Spine',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655427265029/0pTcWvDN80N/1nbKtJInWnV/Panther_Spine.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655427265029/0pTcWvDN80N/4Z1ZSNuOw1T/Panther_Spine.usdz',
+                    },
+                    pt3: {
+                        name: 'Purple',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655478559749/aqwc7V2spH8/eEXZPEgyqv8/Panther_Purple.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655478559749/aqwc7V2spH8/5WC1G3nO4Hf/Panther_Purple.usdz',
+                    },
+                    pt4: {
+                        name: 'Golden',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655443964624/dZkhsbGGnWg/dgwhyLt2bBZ/Panther_Golden.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655443964624/dZkhsbGGnWg/aFhusKAK-gR/Panther_Golden.usdz',
+                    },
+                    pt5: {
+                        name: 'Captain',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655413454768/2Du4l5_e2Ws/3lKkSnoed5a/Panther_Captain.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655413454768/2Du4l5_e2Ws/dmxDdTV7nhi/Panther_Captain.usdz',
+                    },
+                    name: 'Panther',
+                },
+                pd: {
+                    pd1: {
+                        name: 'Skeleton',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655151430528/9q-OSpv7Wzy/dn_XwwvWDhr/Panda_Skeleton.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655151430528/9q-OSpv7Wzy/ck3deYXy3A7/Panda_Skeleton.usdz',
+                    },
+                    pd2: {
+                        name: 'Jumpsuit',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655161887913/9cN-KBRvK0e/5HyYxmXn2xh/Panda Jumpsuit.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655161887913/9cN-KBRvK0e/3rG7rgLXz2F/Panda Jumpsuit.usdz',
+                    },
+                    pd3: {
+                        name: 'Booyahday',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655227193502/d2auOCK7eai/5XeA1aULY5P/Panda_Booyahday.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655227193502/d2auOCK7eai/31bQBLAmjqp/Panda_Booyahday.usdz',
+                    },
+                    pd4: {
+                        name: 'Christmas',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655164227671/f_QBRRNBm6Q/eFi9_iEPNC3/Panda_Christma.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655164227671/f_QBRRNBm6Q/9yJJ-cJ6Yj5/Panda_Christma.usdz',
+                    },
+                    pd5: {
+                        name: 'Thor',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655263295550/1H_Ld--7mnE/bFpmhV3098q/Panda_thor.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655263295550/1H_Ld--7mnE/9uwrxt6I18r/Panda_thor.usdz',
+                    },
+                    pd6: {
+                        name: 'Traprap',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655349724120/7kjwilke7_-/6ds-24KPAm7/pet_3p_Panda_Traprap.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655349724120/7kjwilke7_-/195tLvLxdrk/pet_3p_Panda_Traprap.usdz',
+                    },
+                    pd7: {
+                        name: 'MAX Level 6',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601654973017019/bjETh_voRfH/eAsYKn8_2rB/Panda brown.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601654973017019/bjETh_voRfH/1BwpeRG3m26/Panda brown.usdz',
+                    },
+                    name: 'Panda',
+                },
+                sb: {
+                    sb1: {
+                        name: 'Summer',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601656496424141/dc9_NRCHESG/dxYvWdrvAVb/Shiba_Summer.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601656496424141/dc9_NRCHESG/5Y5zkOMxiz7/Shiba_Summer.usdz',
+                    },
+                    sb2: {
+                        name: 'Halloween',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601656439733002/1-aNj9HrM6b/cRAw-pBGQgN/Shiba_Halloween.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601656439733002/1-aNj9HrM6b/6usF4Zo0YNB/Shiba_Halloween.usdz',
+                    },
+                    sb3: {
+                        name: 'Greendragon',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601656371489267/0B-DjajIupX/cZukgLQVu0E/Shiba_Greendragon.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601656371489267/0B-DjajIupX/98OqDCrgsE-/Shiba_Greendragon.usdz',
+                    },
+                    sb4: {
+                        name: 'Earthdragon',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601656234606749/dyAfNwPV3Bm/cgBuLQSHnsD/Shiba_Earthdragon.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601656234606749/dyAfNwPV3Bm/8TfblgOPQTP/Shiba_Earthdragon.usdz',
+                    },
+                    sb5: {
+                        name: 'Traprap',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601656208822432/69zusBzurxo/0QGKiRSLTJO/pet_3p_Shiba_Traprap.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601656208822432/69zusBzurxo/8rFRuO4H86C/pet_3p_Shiba_Traprap.usdz',
+                    },
+                    sb6: {
+                        name: 'Electricdragon',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655998939905/6Gyzogk_vMS/cD4Uey13vKe/pet_3p_Shiba_Electricdragon.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655998939905/6Gyzogk_vMS/4MRJOPmlOLW/pet_3p_Shiba_Electricdragon.usdz',
+                    },
+                    name: 'Shiba',
+                },
+                ro: {
+                    ro1: {
+                        name: 'Winterfell',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655944612290/2cCr7NHRIDd/9cVO4_jQQNW/Robot_Winterfell.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655944612290/2cCr7NHRIDd/6Ig3d1q9CiQ/Robot_Winterfell.usdz',
+                    },
+                    ro2: {
+                        name: 'Spring',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601656092559046/eB1BU-nczAF/6L7ftn-v6JU/Robot_Spring.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601656092559046/eB1BU-nczAF/eNg_qfs0DcG/Robot_Spring.usdz',
+                    },
+                    ro3: {
+                        name: 'Pharaoh',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655998813369/0XzomFdkS7v/6Y20jdUrLZa/Robot_Pharaoh.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655998813369/0XzomFdkS7v/5vEArREuf-C/Robot_Pharaoh.usdz',
+                    },
+                    ro4: {
+                        name: 'Death',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601656033687798/5Ux_meG1OE_/9Z7RDAefXVD/Robot_Death.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601656033687798/5Ux_meG1OE_/dD1xQMr5078/Robot_Death.usdz',
+                    },
+                    name: 'Robo',
+                },
+                fx: {
+                    fx1: {
+                        name: 'Valentine',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601656783401589/8Nocgdn4xF5/bb9lVvsEft0/Valentinefox.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601656783401589/8Nocgdn4xF5/9ksnYmUqI0X/Valentinefox.usdz',
+                    },
+                    fx2: {
+                        name: 'Plague',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601656536615382/7niAffm0pJL/15yekDpp-hP/PlagueFox.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601656536615382/7niAffm0pJL/22vqfI5FdyT/PlagueFox.usdz',
+                    },
+                    fx3: {
+                        name: 'Pink',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601656739239164/9W_zk_1MYcW/a2hjPV2O265/Pinkfox.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601656739239164/9W_zk_1MYcW/9iIOUkLT5Li/Pinkfox.usdz',
+                    },
+                    fx4: {
+                        name: 'Blue',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601656579868845/154Q1D_61gG/3VbsHsev8Qc/Bluefox.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601656579868845/154Q1D_61gG/2t3MnqZtKII/Bluefox.usdz',
+                    },
+                    fx5: {
+                        name: 'Black',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601656323463091/avDG1tESTSC/7IGVzsQ1DrZ/Blackfox.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601656323463091/avDG1tESTSC/6jKV5BGQNmn/Blackfox.usdz',
+                    },
+                    name: 'Spirit Fox',
+
+                },
+                pr: {
+                    pr1: {
+                        name: 'Angle',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655360408772/190YkYyE_LR/6_QO0pL7vtF/pet_Poring_Angle.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655360408772/190YkYyE_LR/6MBMO1zbFff/pet_Poring_Angle.usdz',
+                    },
+                    pr2: {
+                        name: 'Chieftain',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655493481882/fai4uO5z9zo/2akG1Xr8eq3/pet_Poring_Chieftain.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655493481882/fai4uO5z9zo/eLbZqgfC5Ed/pet_Poring_Chieftain.usdz',
+                    },
+                    pr3: {
+                        name: 'POP',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601720248338588/b3gKk1UA-lS/8EPB6j_Z38T/poring pop.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601720248338588/b3gKk1UA-lS/5_zUg99B-Zb/poring pop.usdz',
+                    },
+                    name: 'Poring',
+                },
+                ot: {
+                    ot1: {
+                        name: 'MAX Level 6',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601654513406738/f0c6hUis_An/6hLwL1DvnpJ/pet_3p_Otter_Grey.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601654513406738/f0c6hUis_An/6WCii9AFUuB/pet_3p_Otter_Grey.usdz',
+                    },
+                    ot2: {
+                        name: 'Jumpsuit',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601654903922681/9cDbFmc7QSj/dgUxijE0mjF/pet_3p_Otter_Jumpsuit.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601654903922681/9cDbFmc7QSj/7VTSKvKXA8o/pet_3p_Otter_Jumpsuit.usdz',
+                    },
+                    ot3: {
+                        name: 'Pink',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601654870883880/cV9TARykrpb/8hea93cqFh1/pet_3p_Otter_Pink.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601654870883880/cV9TARykrpb/1MQI01nU9eX/pet_3p_Otter_Pink.usdz',
+                    },
+                    ot4: {
+                        name: 'Purple',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655000493041/56ZGSuqiqFf/5xM80KsKgy7/pet_3p_Otter_Purple.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655000493041/56ZGSuqiqFf/55dl-zjeudX/pet_3p_Otter_Purple.usdz',
+                    },
+                    name: 'Ottero',
+                },
+                fl: {
+                    fl1: {
+                        name: 'Naturehawk',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601653685192278/0YCwvRDBz52/5Q67QnW3Ako/Falco Naturehawk.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601653685192278/0YCwvRDBz52/bq3t9AN8QQ8/Falco Naturehawk.usdz',
+                    },
+                    fl2: {
+                        name: 'Frosthawk',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601653619586980/4yU24o_KzZ0/3TEAeDP_3Cx/Falco Frosthawk.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601653619586980/4yU24o_KzZ0/6yQXWFvnGyc/Falco Frosthawk.usdz',
+                    },
+                    fl3: {
+                        name: 'Firehawk',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601653396080672/eyMtbuuFc0m/eei2RGABPC5/Firehawk.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601653396080672/eyMtbuuFc0m/fVDTC0HJjMs/Firehawk.usdz',
+                    },
+                    name: 'Falco',
+                },
+                wg: {
+                    wg1: {
+                        name: 'Anniversary',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601656992041997/5h2vAj2Dff7/b0t4g_DA-XK/pet_3p_Penguin_Anniversary.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601656992041997/5h2vAj2Dff7/afiIPYLFDnp/pet_3p_Penguin_Anniversary.usdz',
+                    },
+                    wg2: {
+                        name: 'Cyber',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601657068726390/7O0LUN9W0s-/0E7CYONYKjG/pet_3p_Penguin_Cyber.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601657068726390/7O0LUN9W0s-/ejwZJSH_JAt/pet_3p_Penguin_Cyber.usdz',
+                    },
+                    wg3: {
+                        name: 'Golden',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601656878050353/cBrZfB29JX8/5UljcOf1_yd/pet_3p_Penguin_Golden.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601656878050353/cBrZfB29JX8/5Wy0GDBxq_4/pet_3p_Penguin_Golden.usdz',
+                    },
+                    name: 'Wagger',
+                },
+                rc: {
+                    rc1: {
+                        name: 'Bright',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655924217531/5BzqcIIxh0w/cJqpnXBm3u6/pet_3p_Raccoon_Bright.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655924217531/5BzqcIIxh0w/bG_UOVTQr22/pet_3p_Raccoon_Bright.usdz',
+                    },
+                    rc2: {
+                        name: 'Mech',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655743325203/0djUWSBeyrP/8QRkWnrmrok/pet_3p_Raccoon_Mech.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655743325203/0djUWSBeyrP/5ztQAJc1ifn/pet_3p_Raccoon_Mech.usdz',
+                    },
+                    rc3: {
+                        name: 'Undead',
+                        src: 'https://poly.googleusercontent.com/downloads/c/fp/1601655836665560/3A37pig4Nnd/98y_1-6laAM/pet_3p_Raccoon_Undead.gltf',
+                        "ios-src": 'https://poly.googleusercontent.com/downloads/c/fp/1601655836665560/3A37pig4Nnd/4Ez0S-VYGF7/pet_3p_Raccoon_Undead.usdz',
+                    },
+                    name: 'Raccoon',
+                },
+            },
+            emo: {
+                c: {
+                    e1: {
+                        name: '',
+                        src: '',
+                        'ios-src': '',
+                    },
+                    e2: {
+                        name: '',
+                        src: '',
+                        'ios-src': '',
+                    },
+                    e3: {
+                        name: '',
+                        src: '',
+                        'ios-src': '',
+                    },
+                    name: 'Common',
+                },
+                r: {
+                    e1: {
+                        name: '',
+                        src: '',
+                        'ios-src': '',
+                    },
+                    e2: {
+                        name: '',
+                        src: '',
+                        'ios-src': '',
+                    },
+                    e3: {
+                        name: '',
+                        src: '',
+                        'ios-src': '',
+                    },
+                    name: 'Rare',
+                },
+                l: {
+                    e1: {
+                        name: '',
+                        src: '',
+                        'ios-src': '',
+                    },
+                    e2: {
+                        name: '',
+                        src: '',
+                        'ios-src': '',
+                    },
+                    e3: {
+                        name: '',
+                        src: '',
+                        'ios-src': '',
+                    },
+                    name: 'Legendary',
+                },
+            },
+        }
+
+
+    </script>
+    <script>
+        // Collection
+
+        let B_Vehi = document.getElementById('coll_vehiB');
+        let B_Weap = document.getElementById('coll_weapB');
+        let B_Emo = document.getElementById('coll_emoB');
+
+        let Coll_Back = document.getElementById('Coll_Back')
+        let BtnBck_title = document.getElementById('BtnBck_title')
+        var x1 = "";
+        var y1 = "";
+        var x1x2 = "";
+        var y1y2 = "";
+        let _vehi = document.getElementById('_vehi')
+
+        let Item_Amp = document.querySelectorAll('.Item_Amp');
+        let Amp_vehi = document.getElementById('Amp_vehi');
+        let Jip_vehi = document.getElementById('Jip_vehi');
+        let Moto_vehi = document.getElementById('Moto_vehi');
+        let SUV_vehi = document.getElementById('SUV_vehi');
+        let Trk_vehi = document.getElementById('Trk_vehi');
+        let Tutu_vehi = document.getElementById('Tutu_vehi');
+        function removeA(arr) {
+            var what, a = arguments, L = a.length, ax;
+            while (L > 1 && arr.length) {
+                what = a[--L];
+                while ((ax = arr.indexOf(what)) !== -1) {
+                    arr.splice(ax, 1);
+                };
+            };
+            return arr;
+        };
+        function btn_inactive(id) {
+            var b = document.getElementById(id).parentElement;
+            var p = Array.prototype.slice.call(b.children);
+            var r = [];
+            for (var i = 0; i < p.length; i++) {
+                r.push(p[i].attributes['id'].nodeValue);
+            };
+            removeA(r, b.children[id].attributes['id'].nodeValue);
+            return r;
+        }
+        function modelJS() {
+            const js1_SRC = "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+            const js2_SRC = "https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
+            const Coll_Cont = document.getElementById('Coll_Cont');
+            // MODEL Script
+            function js1check() {
+                if (!js1_SRC) js1_SRC = js1_SRC;
+                var js1SC = document.getElementsByTagName('script');
+                for (var i = js1SC.length; i--;) {
+                    if (js1SC[i].src == js1_SRC) return true;
+                }
+                return false;
+            }
+            if (js1check() == true) { }
+            else if (js1check() == false) {
+                var js1 = document.createElement("script");
+                js1.type = "module";
+                js1.src = js1_SRC;
+                document.getElementsByTagName("head")[0].appendChild(js1);
+            }
+            function js2check() {
+                if (!js2_SRC) js2_SRC = js2_SRC;
+                var js2SC = document.getElementsByTagName('script');
+                for (var i = js2SC.length; i--;) {
+                    if (js2SC[i].src == js2_SRC) return true;
+                }
+                return false;
+            }
+            if (js2check() == true) { }
+            else if (js2check() == false) {
+                var js2 = document.createElement("script");
+                js2.setAttribute("nomodule", "");
+                js2.src = js2_SRC;
+                document.getElementsByTagName("head")[0].appendChild(js2);
+            }
+        }
+        function B_Clear() {
+            var a = Array.prototype.slice.call(document.getElementById('coll_select').children)
+            var r = [];
+            for (var i = 0; i < a.length; i++) {
+                r.push(a[i].attributes['id'].nodeValue);
+            };
+            for (var i = 0; i < r.length; i++) {
+                document.getElementById(r[i]).classList.remove('collB_Act', 'collB_InAct')
+            };
+        }
+        function R_Clear() {
+            Coll_Back.classList.add('displayN');
+            BtnBck_title.classList.add('displayN');
+            Coll_Back.classList.remove('displayB');
+            BtnBck_title.classList.remove('displayB');
+            BtnBck_title.innerHTML = ""
+            var a = document.getElementById('_' + x1x2)
+            a.style.display = 'none'
+            let Item_Coll = document.querySelectorAll('.Item_' + x1x2);
+            for (var i = 0; i < Item_Coll.length; i++) {
+                Item_Coll[i].classList.remove('col-lg-6');
+            }
+        }
+        function ts(a, p) {
+            Coll_Back.classList.remove('displayN');
+            BtnBck_title.classList.remove('displayN');
+            Coll_Back.classList.add('displayB');
+            BtnBck_title.classList.add('displayB');
+            if (a == 'a') {
+                Coll_Back.setAttribute("onclick", "B_Clear();R_Clear();")
+                BtnBck_title.innerHTML = "Back to Collection";
+            }
+            else if (a == 'b') {
+                Coll_Back.setAttribute("onclick", "SubVehi_Clear(y1y2)")
+                BtnBck_title.innerHTML = "Back to " + document.getElementById('coll_' + p + 'B').innerHTML;
+            };
+        }
+        function f(y) {
+            let a = btn_inactive(y)
+            a.push(y)
+            let b = []
+            for (var i = 0; i < a.length; i++) {
+                let c = a[i].replace(/coll_/g, '');
+                c = c.replace(/B/g, '');
+                b.push(c)
+            }
+            return b
+        }
+        function Xcrop(n) {
+            n = n.replace(/coll_/g, '');
+            n = n.replace(/B/g, '');
+            return n
+        }
+        function Item(a) {
+            console.log(a)
+            let Item_Coll = document.querySelectorAll('.Item_' + a);
+            let q = Object.getOwnPropertyNames(Player_Info[Player['code']][PYVerTitle[0]][a]);
+            console.log(q)
+            let p = Object.getOwnPropertyNames(P_Resources[a])
+            for (var i = 0; i < q.length; i++) {
+                removeA(p, q[i])
+                document.getElementById(q[i] + "_" + a).classList.add('displayB')
+            }
+            for (var i = 0; i < p.length; i++) {
+                document.getElementById(p[i] + "_" + a).classList.add('displayN')
+                Item_Coll[i].classList.add('col-lg-6');
+            };
+        };
+        function collF(btn_ID) {
+            var btn = document.getElementById(btn_ID);
+            if (btn.classList.contains('collB_Act') === true) {
+                B_Clear();
+                if (y1) {
+                    function run() {
+                        var a = "SubVehi_Clear"; var b = y1y2;
+                        window[a](b);
+                    };
+                    run()
+                };
+                R_Clear();
+                x1 = "";
+                y1 = "";
+            }
+            else {
+                B_Clear();
+                if (y1) {
+                    function run() {
+                        var a = "SubVehi_Clear"; var b = y1y2;
+                        window[a](b);
+                    };
+                    run()
+                };
+                if (x1x2) { R_Clear(x1x2); };
+                a = btn_inactive(btn_ID);
+                for (i = 0; i < a.length; i++) {
+                    document.getElementById(a[i]).classList.add('collB_InAct');
+                };
+                document.getElementById(btn_ID).classList.add('collB_Act');
+                ts('a', btn_ID)
+                modelJS();
+                x1 = "";
+                y1 = "";
+                function x() {
+                    x1 = Xcrop(btn_ID)
+                    Item(x1)
+                }
+                if (x1 == "") {
+                    x()
+                    x1x2 = x1
+                } else {
+                    x()
+                };
+                b = f(btn_ID)
+                for (var i = 0; i < b.length; i++) { document.getElementById("_" + b[i]).style.display = "none"; }
+                document.getElementById("_" + x1).style.display = 'block';
+            };
+        };
+        function skins_clear(classof) {
+            let classes = document.getElementsByClassName('Item_' + classof);
+            while (classes[0]) {
+                classes[0].parentNode.removeChild(classes[0]);
+            };
+        };
+        function vehi_skins(a, b) {
+            let vehi_skinN = Player_Info[Player['code']][PYVerTitle[0]][a][b];
+            if (vehi_skinN == null) { }
+            else if (vehi_skinN.length > 0) {
+                for (var i = 0; i < vehi_skinN.length; i++) {
+                    let vehi_names = Object.getOwnPropertyNames(P_Resources[a][b]);
+                    let sbNskin_Name = P_Resources[a][b][vehi_skinN[i]]['name'];
+                    let sbNskin_Con = document.createElement('div');
+                    sbNskin_Con.id = b + '_' + sbNskin_Name.replace(/\s/g, '');
+                    sbNskin_Con.classList.add('Item_' + b, 'col-lg-6', 'displayB');
+                    document.getElementById('_' + a).appendChild(sbNskin_Con)
+                    let subN_skins = document.createElement('model-viewer');
+                    subN_skins.setAttribute("alt", P_Resources[a][b][vehi_names[vehi_names.length - 1]] + " Skin " + sbNskin_Name + " OBJ FBX")
+                    subN_skins.setAttribute("src", P_Resources[a][b][vehi_skinN[i]]['src'])
+                    subN_skins.setAttribute("ios-src", P_Resources[a][b][vehi_skinN[i]]['ios-src'])
+                    subN_skins.setAttribute("camera-controls", "")
+                    subN_skins.setAttribute("auto-rotate", "")
+                    subN_skins.classList.add('displayB', 'col-lg-6');
+                    subN_skins.classList.remove('displayN');
+                    sbNskin_Con.appendChild(subN_skins)
+                    let sbNskin_title = document.createElement('h6');
+                    sbNskin_title.innerHTML = sbNskin_Name
+                    subN_skins.appendChild(sbNskin_title)
+                    document.styleSheets[0].insertRule("div div.Item_" + b + " model-viewer" + " { border-image-source: linear-gradient(to top left, #007eff, #ff00b1)}", 0);
+                };
+            };
+        };
+        function SubVehi_Clear(a) {
+            let Item_Coll = document.querySelectorAll('.Item_' + x1x2);
+            for (var i = 0; i < Item_Coll.length; i++) {
+                Item_Coll[i].classList.remove('displayN');
+                Item_Coll[i].classList.add('col-lg-6');
+            };
+            Item(x1x2)
+            let ele_vehi = document.getElementById(a + '_' + x1x2)
+            ele_vehi.classList.add('col-lg-6');
+            // ele_vehi.classList.remove('displayB', 'col-lg-12');
+            Coll_Back.setAttribute("onclick", "B_Clear();R_Clear();window['SubVehi_Clear'](y1y2);R_Clear();")
+            BtnBck_title.innerHTML = "Back to Collection";
+            skins_clear(y1y2);
+            y1 = ""
+        };
+        function SubVehi_Create(name1, id) {
+            if (y1 == "") {
+                y1 = name1
+                y1y2 = y1
+            } else {
+                y1 = name1
+            };
+            ts('b', x1x2)
+            let Item_Coll = document.querySelectorAll('.Item_' + x1);
+            for (var i = 0; i < Item_Coll.length; i++) {
+                Item_Coll[i].classList.add('displayN');
+                Item_Coll[i].classList.remove('col-lg-6');
+            }
+            let ele_coll = document.getElementById(name1 + '_' + x1)
+            ele_coll.classList.remove('displayN');
+            ele_coll.classList.add('displayB')
+            vehi_skins(x1, y1);
+        };
+
+    </script>
+    </script>
+</body>
+
+</html>

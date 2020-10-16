@@ -1,0 +1,234 @@
+<html>
+
+<head>
+    <style>
+        /* CUSTOM CSS*/
+    </style>
+
+</head>
+
+<body>
+    <div class="centered" id="ep-container"></div>
+
+    <script type="text/javascript">
+        const Player = {
+            code: 'MTk5Mzk0NDExMQ==',
+        };
+    </script>
+
+    <script>
+        const Player_Info = {
+            'MTk5Mzk0NDExMQ==': {
+                20200928: {
+                    Url: '',
+                    uID: 1993944111,
+                    Like: 400,
+                    Avatar: 'Halloween',
+                    Banner: 'DaddyCALLing',
+                    ign: "ᴺᴼᴼᴮ᭄ㄚΛＤㄩ★",
+                    Guild: "DadasGroup",
+                    GuildP: "F",
+                    Elites: [26, 27, 25],
+                    BRscores: 2903,
+                    CSranks: 'd' + 4,
+                    CSstars: 2,
+                    CSkdaS: 2.31,
+                    CSwinS: 60,
+
+                    SF_G: 5,
+                    SF_W: 5,
+                    SF_K: 5,
+                    SB_T10R: 5,
+                    SB_KDR: 5,
+                    SB_avgLT: 5,
+                    SB_avgDpM: 5,
+                    SB_MKnOM: 5,
+                    SB_HSs: 5,
+                    SB_HSR: 5,
+
+                    DF_G: 5,
+                    DF_W: 5,
+                    DF_K: 5,
+                    DB_T10R: 5,
+                    DB_KDR: 5,
+                    DB_avgLT: 5,
+                    DB_avgDpM: 5,
+                    DB_MKnOM: 5,
+                    DB_HSs: 5,
+                    DB_HSR: 5,
+
+                    QF_G: 5,
+                    QF_W: 5,
+                    QF_K: 5,
+                    QB_T3R: 5,
+                    QB_KDR: 5,
+                    QB_RVI: 200,
+                    QB_KCDN: 150,
+                    QB_avgLT: 5,
+                    QB_avgDpM: 5,
+                    QB_MKnOM: 5,
+                    QB_HSs: 5,
+                    QB_HSR: 5,
+
+                    Vehicle: ['A0001', 'J0001', 'M0001'],
+
+                    First: '',
+                    Middle: '',
+                    Last: '',
+                    Address: ['Akot', 'Akot', 444101, 'Akola', 'Vidarbha'],
+                    BOD: 20060414,
+                    Social: {
+                        Facebook: '',
+                        Twitter: '',
+                        YouTube: '',
+                        Instagram: '',
+                        Discord: '',
+                    },
+                    Device: 'Redmi Note',
+                    DeviceT: 'Smartphone',
+
+
+                },
+                20200115: {
+                    second: '',
+                },
+                20200401: {
+                    third: '',
+                },
+            },
+            'AnotherCode==': {
+
+            },
+        }
+
+        // Resouces
+        let ign_ELM = document.getElementById('player-IGN');
+        let Ava_ELM = document.getElementById('player-AVAT');
+        let Ban_ELM = document.getElementById('player-BANN');
+        let uID_ELM = document.getElementById('player-UID');
+        let Like_ELM = document.getElementById('player-LIKE');
+        const PYVerTitle = Object.getOwnPropertyNames(Player_Info[Player['code']]);
+        PYVerTitle.sort(function (a, b) { return b - a });
+
+        const P_Resources = {
+            Ava_IMG: {
+                default: 'https://1.bp.blogspot.com/-s4aN5wT6yVE/X0pmr8ybpZI/AAAAAAAADmo/if8ivVuini43pMgz59h1_jIpOq1zst1oACLcBGAsYHQ/s516/daddyCalling+crop.jpg',
+                halloween: 'https://1.bp.blogspot.in/-N5wT6yVE/Xpmr8ybpZI/AAAAAAAADmo/if8ivVuini43pMgz59h1_jIpOq1zst1oACLcBGAsYHQ/s516/daddyCalling%2Bcrop.jpg',
+                black_flag: '#',
+            },
+            Ban_IMG: {
+                default: 'https://1.bp.blogspot.com/-s4aN5wT6yVE/X0pmr8ybpZI/AAAAAAAADmo/if8ivVuini43pMgz59h1_jIpOq1zst1oACLcBGAsYHQ/s516/daddyCalling%2Bcrop.jpg',
+                daddycalling: 'https://1.bp.blogspot.in/-N5wT6yVE/Xpmr8ybpZI/AAAAAAAADmo/if8ivVuini43pMgz59h1_jIpOq1zst1oACLcBGAsYHQ/s516/daddyCalling+crop.jpg',
+                halloween: '#',
+                black_flag: '#',
+            },
+            EP_IMG: {
+                S25: 'https://4.bp.blogspot.com/-sQrOHSxIDZ0/X1O99uL4E-I/AAAAAAAADp8/cMsS2YC-LToF-Is8qu-JgSqRNuKRC_qVwCK4BGAYYCw/s1600/6%2B20.webp',
+                S26: 'https://4.bp.blogspot.com/-qN18ftO4M4M/X1O-0RuhFqI/AAAAAAAADqI/Tit2aaoXB7kwMHpzRBiP_VyURUMTDFHXgCK4BGAYYCw/s1600/7%2B20.webp',
+                S27: 'https://3.bp.blogspot.com/-5gxEOs-7JWA/X1O-4P2hRzI/AAAAAAAADqQ/iWm4PVkVDXQ50Fa6758qIqvMg-DIirMogCK4BGAYYCw/s1600/8%2B20.webp',
+            },
+            Rank_IMG: {
+                bronze1: '',
+                bronze2: '',
+                bronze3: '',
+                silver1: '',
+                silver2: '',
+                silver3: '',
+                gold1: '',
+                gold2: '',
+                gold3: '',
+                gold4: '',
+                platinum1: '',
+                platinum2: '',
+                platinum3: '',
+                platinum4: '',
+                diamond1: 'https://1.bp.blogspot.com/--EbAz05pEek/X2cCobh2sqI/AAAAAAAADtA/1R_y0_4QDjcC0xQK3tsdXl1bO_gYTbu4wCK4BGAYYCw/s1600/diamond%2B1.webp',
+                diamond2: 'https://4.bp.blogspot.com/-MfP7qXwZI2w/X2cCsIf6JkI/AAAAAAAADtI/wObQw46xrYsg00ft0N3ZC44pbftofDhpQCK4BGAYYCw/s1600/diamond%2B2.webp',
+                diamond3: 'https://3.bp.blogspot.com/-4ljeIpB3oXg/X2Yur8X3XPI/AAAAAAAADsU/mFc091pbAZ0oaN0jQVKXRbWE6wa1RSvygCK4BGAYYCw/s400/diamond%2B3.webp',
+                diamond4: 'https://4.bp.blogspot.com/-ilUFna-sHDQ/X2Yuv1UAwLI/AAAAAAAADsc/cuHbjFfPP5U13dtHkOlpB1ozSXclOtHPwCK4BGAYYCw/s400/diamond%2B4.webp',
+                heroic1: '',
+            },
+            br_scorelist: {
+                bronze1: 1000,
+                bronze2: 1100,
+                bronze3: 1200,
+                silver1: 1300,
+                silver2: 1400,
+                silver3: 1500,
+                gold1: 1600,
+                gold2: 1725,
+                gold3: 1850,
+                gold4: 1975,
+                platinum1: 2100,
+                platinum2: 2225,
+                platinum3: 2350,
+                platinum4: 2475,
+                diamond1: 2600,
+                diamond2: 2750,
+                diamond3: 2900,
+                diamond4: 3050,
+                heroic1: 3200,
+            },
+        }
+
+    </script>
+
+    <script>
+        //ELITE PASS Variables
+        var elcontain = document.getElementById('ep-container');
+        var elitepass = Player_Info[Player['code']][PYVerTitle[0]]['Elites'];
+        totalelite = elitepass.length;
+        elitepass.sort(function (a, b) { return b - a });
+        //ELITE PASS Section Creator
+        for (var el2 = 0; el2 < totalelite; el2++) {
+            // Create Container for Elite Pass Item
+            var elITEMbox = document.createElement('div')
+            elITEMbox.className = "responsive";
+
+            // Create Elite Pass Item
+            var elITEM = document.createElement('div');
+            elITEM.className = "gallery";
+
+            // Create EL ImgS
+            var elITEMimg = document.createElement('img');
+            elITEMimg.src = P_Resources['EP_IMG']["S" + elitepass[el2]];
+            elITEMimg.alt = "Season " + elitepass[el2] + " Elite Pass PNG";
+            elITEMimg.height = "400";
+            elITEMimg.width = "600";
+
+            // Add 'S' before the elite pass num
+            elitepass[el2] = "S" + elitepass[el2];
+            // Set id with 'S' of Gallery Child, Parent EP-Container 
+            elITEM.id = elitepass[el2];
+            /*// For testing 'S' is working
+            elITEM.innerHTML = elitepass[el2];*/
+
+            // Append EL Item BOX to EL Container
+            elcontain.appendChild(elITEMbox);
+
+            // Append EL Item to EL Item BOX
+            elITEMbox.appendChild(elITEM);
+
+            // Append EL ImgS to EL Item
+            elITEM.appendChild(elITEMimg);
+
+            // Create Container for No. of Season
+            var elNUMbox = document.createElement('div');
+            elNUMbox.className = "desc";
+
+            // Create A(Tag) of "No. of Season"
+            var elNUM = document.createElement('a')
+            elNUM.className = "desc-title";
+            elNUM.href = "/leaderboard";
+            elNUM.innerHTML = elitepass[el2];
+
+            // Append EL Number Box to EL Item
+            elITEM.appendChild(elNUMbox);
+
+            // Append EL Number(A) to EL Number Box
+            elNUMbox.appendChild(elNUM);
+        }
+    </script>
+</body>
+
+</html>

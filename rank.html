@@ -1,0 +1,298 @@
+<html>
+
+<head>
+	<style>
+		.row {
+			background-color: blue;
+			height: 100px;
+			width: 100px;
+			position: relative;
+
+		}
+
+		.up {
+			background-color: red;
+			height: 200px;
+			width: 100px;
+			position: relative;
+
+		}
+
+		#child {
+			background-color: chartreuse;
+			height: 50px;
+			width: 50px;
+			position: absolute;
+			margin: auto;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="id-part">
+		<h4>BR Rank S17</h4>
+		<div>
+			<img id="BRRank" alt="" src="" style=" width: 200px; height: 200px;">
+		</div>
+		<div style="display:block;margin-top: 1%;">
+			<h6><span>Score: </span><strong id="rankscore"></strong></h6>
+			<h6><span>Top: </span><strong id="rankpercent"></strong></h6>
+		</div>
+		<div class="clearfix"></div>
+
+
+
+	</div>
+	<script>
+		const Player = {
+			code: 'MTk5Mzk0NDExMQ==',
+		};
+	</script>
+
+	<script>
+		const Player_Info = {
+			'MTk5Mzk0NDExMQ==': {
+				20200928: {
+					Url: '',
+					uID: 1993944111,
+					Like: 400,
+					Avatar: 'Halloween',
+					Banner: 'DaddyCALLing',
+					ign: "ᴺᴼᴼᴮ᭄ㄚΛＤㄩ★",
+					Guild: "DadasGroup",
+					GuildP: "F",
+					Elites: [26, 27, 25],
+					BRscores: 2903,
+					CSranks: 'd' + 4,
+					CSstars: 2,
+					CSkdaS: 2.31,
+					CSwinS: 60,
+
+					SF_G: 5,
+					SF_W: 5,
+					SF_K: 5,
+					SB_T10R: 5,
+					SB_KDR: 5,
+					SB_avgLT: 5,
+					SB_avgDpM: 5,
+					SB_MKnOM: 5,
+					SB_HSs: 5,
+					SB_HSR: 5,
+
+					DF_G: 5,
+					DF_W: 5,
+					DF_K: 5,
+					DB_T10R: 5,
+					DB_KDR: 5,
+					DB_avgLT: 5,
+					DB_avgDpM: 5,
+					DB_MKnOM: 5,
+					DB_HSs: 5,
+					DB_HSR: 5,
+
+					QF_G: 5,
+					QF_W: 5,
+					QF_K: 5,
+					QB_T3R: 5,
+					QB_KDR: 5,
+					QB_RVI: 200,
+					QB_KCDN: 150,
+					QB_avgLT: 5,
+					QB_avgDpM: 5,
+					QB_MKnOM: 5,
+					QB_HSs: 5,
+					QB_HSR: 5,
+
+					Vehicle: ['A0001', 'J0001', 'M0001'],
+
+					First: '',
+					Middle: '',
+					Last: '',
+					Address: ['Akot', 'Akot', 444101, 'Akola', 'Vidarbha'],
+					BOD: 20060414,
+					Social: {
+						Facebook: '',
+						Twitter: '',
+						YouTube: '',
+						Instagram: '',
+						Discord: '',
+					},
+					Device: 'Redmi Note',
+					DeviceT: 'Smartphone',
+
+
+				},
+				20200115: {
+					second: '',
+				},
+				20200401: {
+					third: '',
+				},
+			},
+			'AnotherCode==': {
+
+			},
+		}
+
+		// Resouces
+		let ign_ELM = document.getElementById('player-IGN');
+		let Ava_ELM = document.getElementById('player-AVAT');
+		let Ban_ELM = document.getElementById('player-BANN');
+		let uID_ELM = document.getElementById('player-UID');
+		let Like_ELM = document.getElementById('player-LIKE');
+		const PYVerTitle = Object.getOwnPropertyNames(Player_Info[Player['code']]);
+		PYVerTitle.sort(function (a, b) { return b - a });
+
+		const P_Resources = {
+			Ava_IMG: {
+				default: 'https://1.bp.blogspot.com/-s4aN5wT6yVE/X0pmr8ybpZI/AAAAAAAADmo/if8ivVuini43pMgz59h1_jIpOq1zst1oACLcBGAsYHQ/s516/daddyCalling+crop.jpg',
+				halloween: 'https://1.bp.blogspot.in/-N5wT6yVE/Xpmr8ybpZI/AAAAAAAADmo/if8ivVuini43pMgz59h1_jIpOq1zst1oACLcBGAsYHQ/s516/daddyCalling%2Bcrop.jpg',
+				black_flag: '#',
+			},
+			Ban_IMG: {
+				default: 'https://1.bp.blogspot.com/-s4aN5wT6yVE/X0pmr8ybpZI/AAAAAAAADmo/if8ivVuini43pMgz59h1_jIpOq1zst1oACLcBGAsYHQ/s516/daddyCalling%2Bcrop.jpg',
+				daddycalling: 'https://1.bp.blogspot.in/-N5wT6yVE/Xpmr8ybpZI/AAAAAAAADmo/if8ivVuini43pMgz59h1_jIpOq1zst1oACLcBGAsYHQ/s516/daddyCalling+crop.jpg',
+				halloween: '#',
+				black_flag: '#',
+			},
+			EP_IMG: {
+				S25: 'https://4.bp.blogspot.com/-sQrOHSxIDZ0/X1O99uL4E-I/AAAAAAAADp8/cMsS2YC-LToF-Is8qu-JgSqRNuKRC_qVwCK4BGAYYCw/s1600/6%2B20.webp',
+				S26: 'https://4.bp.blogspot.com/-qN18ftO4M4M/X1O-0RuhFqI/AAAAAAAADqI/Tit2aaoXB7kwMHpzRBiP_VyURUMTDFHXgCK4BGAYYCw/s1600/7%2B20.webp',
+				S27: 'https://3.bp.blogspot.com/-5gxEOs-7JWA/X1O-4P2hRzI/AAAAAAAADqQ/iWm4PVkVDXQ50Fa6758qIqvMg-DIirMogCK4BGAYYCw/s1600/8%2B20.webp',
+			},
+			Rank_IMG: {
+				bronze1: '',
+				bronze2: '',
+				bronze3: '',
+				silver1: '',
+				silver2: '',
+				silver3: '',
+				gold1: '',
+				gold2: '',
+				gold3: '',
+				gold4: '',
+				platinum1: '',
+				platinum2: '',
+				platinum3: '',
+				platinum4: '',
+				diamond1: 'https://1.bp.blogspot.com/--EbAz05pEek/X2cCobh2sqI/AAAAAAAADtA/1R_y0_4QDjcC0xQK3tsdXl1bO_gYTbu4wCK4BGAYYCw/s1600/diamond%2B1.webp',
+				diamond2: 'https://4.bp.blogspot.com/-MfP7qXwZI2w/X2cCsIf6JkI/AAAAAAAADtI/wObQw46xrYsg00ft0N3ZC44pbftofDhpQCK4BGAYYCw/s1600/diamond%2B2.webp',
+				diamond3: 'https://3.bp.blogspot.com/-4ljeIpB3oXg/X2Yur8X3XPI/AAAAAAAADsU/mFc091pbAZ0oaN0jQVKXRbWE6wa1RSvygCK4BGAYYCw/s400/diamond%2B3.webp',
+				diamond4: 'https://4.bp.blogspot.com/-ilUFna-sHDQ/X2Yuv1UAwLI/AAAAAAAADsc/cuHbjFfPP5U13dtHkOlpB1ozSXclOtHPwCK4BGAYYCw/s400/diamond%2B4.webp',
+				heroic1: '',
+			},
+			br_scorelist: {
+				bronze1: 1000,
+				bronze2: 1100,
+				bronze3: 1200,
+				silver1: 1300,
+				silver2: 1400,
+				silver3: 1500,
+				gold1: 1600,
+				gold2: 1725,
+				gold3: 1850,
+				gold4: 1975,
+				platinum1: 2100,
+				platinum2: 2225,
+				platinum3: 2350,
+				platinum4: 2475,
+				diamond1: 2600,
+				diamond2: 2750,
+				diamond3: 2900,
+				diamond4: 3050,
+				heroic1: 3200,
+			},
+		}
+
+	</script>
+	<script>
+		// Score Calculator
+		let BRrankS = document.getElementById('rankscore').innerHTML = Player_Info[Player['code']][PYVerTitle[0]]['BRscores']
+
+		// Percentage Calculator
+
+
+		// REMAIN !! GrandMaster Section + Heroic Stars !!!
+		const BR_img = document.getElementById('BRRank')
+
+		// Convert Object Keys into Array
+		var scoreArray = [];
+		function scorelists() {
+			let noFscores = Object.values(P_Resources['br_scorelist']);
+			for (let value of noFscores) {
+				scoreArray[scoreArray.length] = value;
+			}
+		}
+		scorelists()
+
+		// Find Closest to 
+		function closest(num, arr) {
+			var mid;
+			var lo = 0;
+			var hi = arr.length - 1;
+			while (hi - lo > 1) {
+				mid = Math.floor((lo + hi) / 2);
+				if (arr[mid] < num) {
+					lo = mid;
+				} else {
+					hi = mid;
+				}
+			}
+			if (num - arr[lo] <= arr[hi] - num) {
+				return arr[lo];
+			}
+			return arr[hi];
+		}
+		const ClosestScore = closest(BRrankS, scoreArray)
+
+		// Find the KeyName(ClosestRank) of ClosestScore
+		function getKeyByValue(object, value) {
+			return Object.keys(object).find(key => object[key] === value);
+		}
+		const ClosestRank = getKeyByValue(P_Resources['br_scorelist'], ClosestScore)
+
+		// Extract and Separate String/Num
+		function extractN(numOfS) {
+			return numOfS.replace(/\D/g, '')
+		}
+		function extractS(wholeS, numS) {
+			return wholeS.replace(numS, '');
+		}
+
+		// Correct Closest and Apply
+		if (ClosestScore == BRrankS) {
+			BR_img.src = P_Resources['Rank_IMG'][ClosestRank];
+			console.log(ClosestRank)
+		}
+		else if (BRrankS < ClosestScore) {
+			oFunctions = {};
+			oFunctions.keys = {};
+			oFunctions.keys.previous = function (o, id) {
+				var keys = Object.keys(o),
+					idIndex = keys.indexOf(id),
+					nextIndex = idIndex - 1;
+
+				if (idIndex === 0) {
+					nextIndex = idIndex;
+				}
+				var nextKey = keys[nextIndex]
+				return nextKey;
+			};
+			var prevCloseRank = oFunctions.keys.previous(P_Resources['br_scorelist'], ClosestRank)
+			BR_img.src = P_Resources['Rank_IMG'][prevCloseRank]
+			BR_img.alt = extractS(prevCloseRank, extractN(prevCloseRank)).charAt(0).toUpperCase() + extractS(prevCloseRank, extractN(prevCloseRank)).slice(1) + ' ' + extractN(prevCloseRank) + ' Rank PNG'
+		}
+		else if (BRrankS > ClosestScore) {
+			BR_img.src = P_Resources['Rank_IMG'][ClosestRank]
+			BR_img.alt = extractS(ClosestRank, extractN(ClosestRank)).charAt(0).toUpperCase() + extractS(ClosestRank, extractN(ClosestRank)).slice(1) + ' ' + extractN(ClosestRank) + ' Rank PNG'
+		}
+
+		// IMAGE Fail to load
+		BR_img.onerror = function () {
+			BR_img.src = P_Resources['Rank_IMG']['bronze1']
+		}
+	</script>
+</body>
+
+</html>
