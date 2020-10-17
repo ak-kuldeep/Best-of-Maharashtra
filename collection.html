@@ -1260,7 +1260,20 @@
                     let sbNskin_title = document.createElement('h6');
                     sbNskin_title.innerHTML = sbNskin_Name
                     subN_skins.appendChild(sbNskin_title)
-                    document.styleSheets[0].insertRule("div div.Item_" + b + " model-viewer" + " { border-image-source: linear-gradient(to top left, #007eff, #ff00b1)}", 0);
+
+                    var css = document.createElement('style');
+                    var styles = "div div.Item_" + b + " model-viewer" + " { border-image-source: linear-gradient(to top left, #007eff, #ff00b1)}";
+                    css.type = 'text/css';
+                    if (css.styleSheet) {
+                        css.styleSheet.cssText = styles;
+                    }
+                    else {
+                        css.appendChild(document.createTextNode(styles));
+                    }
+                    document.getElementsByTagName("head")[0].appendChild(css);
+
+
+                    // document.styleSheets[0].insertRule("div div.Item_" + b + " model-viewer" + " { border-image-source: linear-gradient(to top left, #007eff, #ff00b1)}", 0);
                 };
             };
         };
