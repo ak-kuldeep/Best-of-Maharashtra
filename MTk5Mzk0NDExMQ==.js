@@ -1,4 +1,3 @@
-// Player Information
 const Player_Info = {
     'MTk5Mzk0NDExMQ==': {
         20200928: {
