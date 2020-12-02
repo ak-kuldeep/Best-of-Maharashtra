@@ -63,7 +63,7 @@ const Player_Info = {
                 wg: ['wg1', 'wg2'],
                 rc: ['rc1', 'rc2'],
             },
-                                emo: {
+            emo: {
                 c: ['c4', 'c2'],
                 r: ['r27', 'r2'],
                 l: ['l7', 'l2'],
@@ -71,9 +71,17 @@ const Player_Info = {
             weap: {
 
             },
-            First: 'Yadnesh',
+        },
+        20200115: {
+            second: '',
+        },
+        20200401: {
+            third: '',
+        },
+        c: {
+            First: '',
             Middle: '',
-            Last: 'Akotkar',
+            Last: '',
             Address: ['Akot', 'Akot', 444101, 'Akola', 'Vidarbha'],
             BOD: 20060414,
             Social: {
@@ -85,12 +93,6 @@ const Player_Info = {
             },
             Device: 'Redmi Note',
             DeviceT: 'Smartphone',
-        },
-        20200115: {
-            second: '',
-        },
-        20200401: {
-            third: '',
-        },
+        }
     },
 }
