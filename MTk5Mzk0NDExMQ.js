@@ -72,8 +72,8 @@ const Player_Info = {
 
             },
             First: 'Yadnesh',
-            Middle: 'Akotkar',
-            Last: '',
+            Middle: '',
+            Last: 'Akotkar',
             Address: ['Akot', 'Akot', 444101, 'Akola', 'Vidarbha'],
             BOD: 20060414,
             Social: {
