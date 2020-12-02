@@ -71,8 +71,8 @@ const Player_Info = {
             weap: {
 
             },
-            First: '',
-            Middle: '',
+            First: 'Yadnesh',
+            Middle: 'Akotkar',
             Last: '',
             Address: ['Akot', 'Akot', 444101, 'Akola', 'Vidarbha'],
             BOD: 20060414,
