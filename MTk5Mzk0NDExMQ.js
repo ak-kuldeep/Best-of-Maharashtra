@@ -4,7 +4,7 @@ const Player_Info = {
             Url: '',
             uID: 1993944111,
             Like: 400,
-            Avatar: 'Halloween',
+            Avatar: 'alok',
             Banner: 'DaddyCALLing',
             ign: "ᴺᴼᴼᴮ᭄ㄚΛＤㄩ★",
             GID: "12345678",
