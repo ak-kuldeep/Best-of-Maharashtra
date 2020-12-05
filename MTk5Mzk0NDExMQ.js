@@ -5,7 +5,7 @@ const Player_Info = {
             uID: 1993944111,
             Like: 400,
             Avatar: 'alok',
-            Banner: 'DaddyCALLing',
+            Banner: 'S16D',
             ign: "ᴺᴼᴼᴮ᭄ㄚΛＤㄩ★",
             GID: "12345678",
             GPP: "F",
