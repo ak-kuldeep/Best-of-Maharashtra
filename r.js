@@ -901,10 +901,6 @@ const P_Resources = {
         },
     },
     G_Info: {
-        '12345678': {
-            name: 'DadasGroup',
-            glory: '100000',
-            create: '20060723',
-        },
+
     },
 }
