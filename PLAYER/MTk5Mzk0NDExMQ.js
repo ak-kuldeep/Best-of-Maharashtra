@@ -5,7 +5,7 @@ dGhpcw.MTk5Mzk0NDExMQ = {
         Avatar: 'alok',
         Banner: 'S16D',
         ign: "ᴺᴼᴼᴮ᭄ㄚΛＤㄩ★",
-        GID: "12345678",
+        GID: "64866832",
         GPP: "F",
         Elites: [26, 27, 25],
         BRscores: 2903,
