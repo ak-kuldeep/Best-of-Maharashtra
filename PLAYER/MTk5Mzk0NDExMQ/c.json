@@ -1,0 +1,20 @@
+{
+    "c": {
+        "First": "Yadnesh",
+        "Middle": "",
+        "Last": "Akotkar",
+        "Address": ["Akot", "Akot", 444101, "Akola", "Vidarbha"],
+        "BOD": 20060414,
+        "Social": {
+            "Facebook": "",
+            "Twitter": "",
+            "YouTube": "",
+            "Instagram": "",
+            "Discord": ""
+        },
+        "Device": "Redmi Note",
+        "DeviceT": "Smartphone",
+        "Url": "",
+        "uID": 1993944111
+    }
+}
