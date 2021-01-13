@@ -4,11 +4,11 @@
     "Banner": "S16D",
     "ign": "ᴺᴼᴼᴮ᭄ㄚΛＤㄩ★",
     "GCD": "NjQ4NjY4MzI",
-    "Elites": [
-        26,
-        27,
-        25
-    ],
+    "Elites": {
+        "26": 200,
+        "27": 180,
+        "25": 250
+    },
     "BRscores": 2903,
     "CSranks": "d4",
     "CSstars": 2,
