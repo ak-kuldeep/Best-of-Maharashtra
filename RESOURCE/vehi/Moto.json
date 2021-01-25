@@ -1,0 +1,33 @@
+{
+      "M0001": {
+        "name": "BioBody",
+        "src": "https://poly.googleusercontent.com/downloads/c/fp/1601466878896169/2Zyyo2KDWWy/7M1D03da_Hu/Motobike BioBody.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601466878896169/2Zyyo2KDWWy/210tlGFyDPp/Motobike BioBody.usdz"
+      },
+      "M0002": {
+        "name": "Fashionfox",
+        "src": "https://poly.googleusercontent.com/downloads/c/fp/1601466989713373/1mVa6SsWx5L/0ckm8nM4I71/Motobike Fashionfox.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601466989713373/1mVa6SsWx5L/0yyyTWlPWtR/Motobike Fashionfox.usdz"
+      },
+      "M0003": {
+        "name": "Gemini",
+        "src": "https://poly.googleusercontent.com/downloads/c/fp/1601467153143656/esKNeiUSNSb/8HMFxZjw3_f/Motobike Gemini.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601467153143656/esKNeiUSNSb/cLcw7Rnf438/Motobike Gemini.usdz"
+      },
+      "M0004": {
+        "name": "Cowboy",
+        "src": "https://poly.googleusercontent.com/downloads/c/fp/1601466959504499/8NPBTTDdOyu/1QFktnWKnXh/Motobike Cowboy.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601466959504499/8NPBTTDdOyu/4__ONeFUxB5/Motobike Cowboy.usdz"
+      },
+      "M0005": {
+        "name": "Dinosaur",
+        "src": "https://poly.googleusercontent.com/downloads/c/fp/1601467087312381/1slkv9cpzjB/2JKG_NsRNvq/Motobike Dinosaur.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601467087312381/1slkv9cpzjB/fPERCkeHsVM/Motobike Dinosaur.usdz"
+      },
+      "M0006": {
+        "name": "Tron",
+        "src": "https://poly.googleusercontent.com/downloads/c/fp/1601467120654993/5AaQleD7oV-/eOJ6WxMjKjI/Motobike Tron.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601467120654993/5AaQleD7oV-/aDBmL-07dM8/Motobike Tron.usdz"
+      },
+      "name": "Moto"
+}

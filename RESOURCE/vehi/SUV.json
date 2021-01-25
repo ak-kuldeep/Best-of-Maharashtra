@@ -1,0 +1,13 @@
+{
+      "S0001": {
+        "name": "Jumpsuit",
+        "src": "https://poly.googleusercontent.com/downloads/c/fp/1601467470520011/ec7SBvoMSAT/4Ep3NmU3Fd5/SUV Jumpsuit.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601467470520011/ec7SBvoMSAT/7wof5s0y7O1/SUV Jumpsuit.usdz"
+      },
+      "S0002": {
+        "name": "Imperial Egypt",
+        "src": "https://poly.googleusercontent.com/downloads/c/fp/1601467245321681/f5HrN7UjaCu/7jk8OSC68HJ/SUV Imperialegypt.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601467245321681/f5HrN7UjaCu/aK-h93Z6cJK/SUV Imperialegypt.usdz"
+      },
+      "name": "SUV"
+}

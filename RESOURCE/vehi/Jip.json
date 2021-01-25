@@ -1,0 +1,28 @@
+{
+      "J0001": {
+            "name": "Halloween",
+            "src": "https://poly.googleusercontent.com/downloads/c/fp/1601463611214004/6S5vvu1tZ7n/dvTWvuGbCpV/scene.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601463611214004/6S5vvu1tZ7n/cz2ABm2FPdJ/scene.usdz"
+      },
+      "J0002": {
+            "name": "Royalguard",
+            "src": "https://poly.googleusercontent.com/downloads/c/fp/1601466599025387/6KzhMzj5M5v/bWekD0mfVGk/Jeep%20Royalguard.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601466599025387/6KzhMzj5M5v/eclRmOfjk3J/Jeep%20Royalguard.usdz"
+      },
+      "J0003": {
+            "name": "Easter",
+            "src": "https://poly.googleusercontent.com/downloads/c/fp/1601466731807265/e3YORlZazfO/6oAnqyxVXGw/Jeep%20Easter.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601466731807265/e3YORlZazfO/9IviYm9qR4_/Jeep%20Easter.usdz"
+      },
+      "J0004": {
+            "name": "Golden Mecernary",
+            "src": "https://poly.googleusercontent.com/downloads/c/fp/1601466879166093/2AWKKqbNjIP/8rpHe4uT4EF/Jeep GoldenMecernary.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601466879166093/2AWKKqbNjIP/5uqTR2Lj-1v/Jeep GoldenMecernary.usdz"
+      },
+      "J0005": {
+            "name": "MadMax",
+            "src": "https://poly.googleusercontent.com/downloads/c/fp/1601466944248027/7hoeO1Vmtzl/6YFd6KED0nt/Jeep MadMax.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601466944248027/7hoeO1Vmtzl/7XJDX485sU6/Jeep MadMax.usdz"
+      },
+      "name": "Jeep"
+}

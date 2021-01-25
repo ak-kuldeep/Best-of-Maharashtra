@@ -1,0 +1,23 @@
+{
+      "T0001": {
+            "name": "Solo Clown",
+            "src": "https://poly.googleusercontent.com/downloads/c/fp/1601467884920307/axuTOGI10kX/45SKAEifZGc/Tutu SoloClown.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601467884920307/axuTOGI10kX/3qgwGqrWvT7/Tutu SoloClown.usdz"
+      },
+      "T0002": {
+            "name": "Christmas",
+            "src": "https://poly.googleusercontent.com/downloads/c/fp/1601467675875586/dHZTx56mhGw/blUH8k_cUPz/Tutu Christmas.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601467675875586/dHZTx56mhGw/749UmKJkiWq/Tutu Christmas.usdz"
+      },
+      "T0003": {
+            "name": "8Bit",
+            "src": "https://poly.googleusercontent.com/downloads/c/fp/1601467744029741/a8nAw1VO3z5/6_tYUjWaXNP/Tutu 8Bit.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601467744029741/a8nAw1VO3z5/c5I4YsBBCSj/Tutu 8Bit.usdz"
+      },
+      "T0004": {
+            "name": "India New Year",
+            "src": "https://poly.googleusercontent.com/downloads/c/fp/1601467599802532/0YTiSD1isGT/7y-YDKKTJyT/Tutu Indianewyear.gltf",
+            "ios-src": "https://poly.googleusercontent.com/downloads/c/fp/1601467599802532/0YTiSD1isGT/7XZU1jx-EnF/Tutu Indianewyear.usdz"
+      },
+      "name": "Auto Rickshaw"
+}
